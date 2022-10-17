@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+
+@font-face {
+  font-family: authentic-signature;
+  src: url('./Fonts/Authentic-Signature.otf');
+}
+
+body{
+  font-family: 'Crimson Text', serif !important; 
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  scroll-behavior: smooth;
+}
+
+html {
+    --scrollbarBG: #CFD8DC;
+    --thumbBG: #b53368;
+  }
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+  }
+
+
+/*  SCROLL TO TOP */
+
+a{
+  text-decoration: none !important;
+}
+
+.hero{
+  background-image: url('./Assets/hero.jpg');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  position: relative;
+}
+
+.logo-bg{
+  background: white;
+  padding-right: 3px;
+  margin: 5px 10px 0px;
+  border-radius: 50%;
+}
+
+.logo{
+  width: 90px;
+  /*animation: App-logo-spin infinite 5s linear;*/
+}
+
+@media(max-width:576px){
+  .logo{
+    width: 80px;
+  }
+}
+
+.nav{
+ position: absolute;
+  color: white;
+}
+nav ul li a{
+  color: white;
+  display: inline-block;
+  transition: 0.3s;
+}
+nav ul li a:hover{
+  color: white;
+  transform: translateY(-5px);
+}
+
+.flex{
+  display: flex;
+  gap:var(--gap, 2rem);
+}
+
+
+
+.mobile-nav-toggle{
+  display: none;
+}
+
+.primary-header{
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+
+
+
+
+@media(max-width:992px){
+  .lg-nav{
+    display: none;
+  }
+  .mobile-nav{
+    display: inline-flex;
+  }
+.mobile-nav {
+  position: fixed;
+  --gap:2rem;
+  border-radius: 0px;
+  inset:0 0 0 40%;
+  z-index: 1000;
+  flex-direction: column;
+  padding: min(20vh, 10rem) 2em;
+  transform: translateX(100%);
+  transition: 0.3s;
+
+  list-style: none;
+margin: 0;
+
+ background: #b53368;
+backdrop-filter: blur(2rem);
+
+  }
+  .mobile-nav-footer{
+    position: absolute;
+    bottom: 2rem;
+  }
+  .mobile-nav-footer a{
+    padding: 6px 12px;
+    background: #FFFFFF;
+    color: #b53368;
+    border-radius: 10px;
+    display: flex;
+  }
+
+
+.mobile-nav a{
+  text-decoration: none;
+}
+
+
+ .mobile-nav[data-visible="true"]{
+  transform: translateX(0%);
+
+ }
+
+ .mobile-nav-toggle{
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  background: transparent;
+  background-image: url('./Assets/menu-pink.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color :white;
+
+  width: 2.5rem;
+ border: 0;
+
+  aspect-ratio: 1;
+  top: 1.3rem;
+  right: 2rem;
+  transition: 0.4s;
+}
+.mobile-nav-toggle[aria-expanded="true"]{
+  background-image: url('./Assets/close-pink.png');
+  position: fixed;
+  
+}
+}
+@media(min-width:992px){
+  .mobile-nav{
+    display: none;
+  }
+  .lg-nav{
+    display: inline-flex;
+  }
+  .lg-nav{
+    padding: 1rem;
+  }
+  .lg-nav{
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    border-radius: 15px 0px 0px 15px;
+     background: #b53368;
+    backdrop-filter: blur(2rem);
+    }
+    
+    .lg-nav a{
+      text-decoration: none;
+
+    }
+  
+  }
+/*-----  About section CSS ----- */
+#about,
+#services,
+#portfolio,
+#faq{
+  scroll-margin-top: 20px;
+}
+
+.about .authentic{
+  font-family: authentic-signature;
+  font-size: 120px;
+  font-weight: 500;
+  color: #b53368;
+}
+
+
+
+.about h1,
+.faq h1,
+.reviews h1,
+.services h1,
+.portfolio h1,
+.contact h1{
+  font-family: 'Crimson Text', serif;
+  color: #b53368;
+  font-weight: 700;
+  margin: 8px 0px;
+}
+.about-data,
+.services-data,
+.reviews-data{
+    background-image: url('.//Assets/pink-bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.about-data p{
+  color: white;
+  font-size: 50px;
+  margin: 0;
+  
+}
+.services-data img{
+  width: 500px;
+}
+.services-data h2{
+    color:white;
+    font-weight: 700;
+  
+}
+
+.reviews-data p{
+    color: white;
+    font-size: 30px;
+    margin: 0;
+}
+
+
+
+@media(max-width:992px){
+    .about .authentic{
+      font-size: 80px;
+     }
+  }
+  @media(max-width:768px){
+    .about .authentic{
+      font-size: 60px;
+     }
+     .about-data p{
+      font-size: 30px;
+     }
+     .reviews-data p{
+        font-size:16px;
+     }
+  }
+  @media(max-width:576px){
+    .about .authentic{
+      font-size: 40px;
+     }
+  }
+
+
+  /* ------------------------------ FAQs Accordion ------------------------------*/
+
+  .faq .accordion-button{
+    font-size: inherit;
+  }
+  
+  .faq .accordion-item{
+    border: 0.5px solid #f1dae3;
+ }
+
+  .faq .accordion-button:not(.collapsed){
+    color: inherit;
+    background:url('./Assets/pink-bg.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+  }
+
+ .faq button.accordion-button:not(.collapsed)::after{
+   filter:brightness(0%) invert(100%);
+   color: white;
+}
+
+.faq .accordion-button:focus{
+    box-shadow: inherit;
+}
+
+.contact{
+    overflow: hidden;
+}
+.contact h3{
+    font-family: 'Crimson Text', serif;
+  color: #b53368;
+  font-weight: 700;
+  margin: 4px 0px;
+}
+.contact .contact-icon{
+    width: 60px;
+}
+@media(max-width:576px){
+    .contact-logo{
+        width: 300px;
+    }
+    .contact h2{
+        font-size: 16px;
+    }
+    .contact .contact-icon{
+        width: 45px;
+    }
+}
+
+
+footer{
+    background: url('./Assets/pink-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 15px 0px;
+}
+footer h4{
+    margin: 0px;
+    font-family: 'Crimson Text', serif;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+
+
+
+
+
+/*
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}*/
